@@ -5,22 +5,22 @@
 
 ## 🔴 待完成
 
-### Phase 1 — Core lift（下一步，可交接 sonnet）
+### Phase 1 — Core lift（**進行中**）
 詳細 spec：`docs/phase-1-spec.md`
 
-- [ ] `busytag_meter/device/serial_io.py` — `BusytagDevice` class + flock + AT+UF/AT+SP ack + retry
-- [ ] `busytag_meter/device/discovery.py` — `find_device()` scan + AT ping
-- [ ] `busytag_meter/sources/base.py` — `UsageSource` ABC + `UsageSnapshot` dataclass
-- [ ] `busytag_meter/sources/_shared_state.py` — `read_state` / `write_state` + max() v2 消歧 + atomic write
-- [ ] `busytag_meter/sources/claude_code.py` — `ClaudeCodeSource` + `dump_from_stdin()`
-- [ ] `busytag_meter/sources/codex.py` — `CodexSource` + `poll_and_dump()` 讀 `~/.codex/sessions/**/rollout-*.jsonl`
-- [ ] `busytag_meter/display/renderer.py` — PIL 240×280 雙列 + stale 灰化
-- [ ] `busytag_meter/display/refresh.py` — `run_once` + `run_forever`
-- [ ] `busytag_meter/cli.py` — typer app（`daemon` / `refresh` / `status` / `poll-codex`）
-- [ ] `tests/test_shared_state.py` — max() v2 五個 case
-- [ ] `tests/test_codex_poll.py` — fixture-based rollout 解析
-- [ ] `tests/test_renderer.py` — PNG 產出驗證
-- [ ] `pip install -e .` 成功、`pytest` 過、`python -m busytag_meter daemon` 端到端跑通 device 顯示
+- [x] `busytag_meter/device/serial_io.py` — `BusytagDevice` class + flock + AT+UF/AT+SP ack + retry
+- [x] `busytag_meter/device/discovery.py` — `find_device()` scan + AT ping
+- [x] `busytag_meter/sources/base.py` — `UsageSource` ABC + `UsageSnapshot` dataclass
+- [x] `busytag_meter/sources/_shared_state.py` — `read_state` / `write_state` + max() v2 消歧 + atomic write
+- [x] `busytag_meter/sources/claude_code.py` — `ClaudeCodeSource` + `dump_from_stdin()`
+- [x] `busytag_meter/sources/codex.py` — `CodexSource` + `poll_and_dump()` 讀 `~/.codex/sessions/**/rollout-*.jsonl`
+- [x] `busytag_meter/display/renderer.py` — PIL 240×280 雙列 + stale 灰化
+- [x] `busytag_meter/display/refresh.py` — `run_once` + `run_forever`
+- [x] `busytag_meter/cli.py` — typer app（`daemon` / `refresh` / `status` / `poll-codex`）
+- [x] `tests/test_shared_state.py` — max() v2 五個 case
+- [x] `tests/test_codex_poll.py` — fixture-based rollout 解析
+- [x] `tests/test_renderer.py` — PNG 產出驗證
+- [x] `pip install -e .` 成功、`pytest` 過（13/13）、`python -m busytag_meter status` + `poll-codex` 驗證 OK（device 顯示需手動，需接實機）
 
 ### Phase 2 — Installer / Hooks / Doctor
 （Phase 1 收尾後寫 `docs/phase-2-spec.md`）
@@ -69,6 +69,7 @@
 | 2026-05-13 | Phase 0：研究 + skeleton | Codex 訊號源確認、HTTP API 路線排除、PyPI 名字確認、repo skeleton commit `bd22053` |
 | 2026-05-13 | Branch rename `master` → `main` | — |
 | 2026-05-13 | PLAN.md / docs/phase-1-spec.md / task-tracker.md | 交接文件三件套 |
+| 2026-05-13 | Phase 1 Core lift 完成 | 13 tests pass；`status` + `poll-codex` CLI 驗證 OK；device 顯示需手動接實機測 |
 
 ## 會議紀錄
 

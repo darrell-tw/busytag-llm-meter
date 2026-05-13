@@ -20,3 +20,6 @@ busytag-meter = "busytag_meter.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["busytag_meter"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
