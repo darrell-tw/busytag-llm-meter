@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "busytag-llm-meter"
+version = "0.0.0"
+description = "Display Claude Code & Codex rate limits on your Busy Tag device in real time"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "pyserial",
+    "Pillow",
+    "typer",
+]
+
+[project.scripts]
+busytag-meter = "busytag_meter.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["busytag_meter"]
