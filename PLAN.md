@@ -26,7 +26,7 @@
 |-------|------|------|----------|
 | **0** | 研究 + skeleton | 0.5d | ✅ 已完成（commit `bd22053`） |
 | **1** | Core lift：把 `~/.claude/hooks/` + `~/Darrell/code/busytag/` 既有邏輯重構進 package | 1-1.5d | `python -m busytag_meter daemon` 跑通，device 顯示 Claude + Codex 雙列 |
-| **2** | Installer / Hooks / Doctor | 1-1.5d | `pipx install -e . && busytag-meter init` 在乾淨環境零互動裝完、launchd 接管 |
+| **2** | Installer / Hooks / Doctor | 1-1.5d | `pipx install -e . && busytag-meter init` 在乾淨環境零互動裝完、cron 接管 |
 | **3** | Polish + 公開化 | 0.5d | README demo GIF、CI 過、`docs/` 完整、第一個 release tag `v0.1.0` |
 | **4** | PyPI 上架 + GitHub 公開 | 0.25d | `pipx install busytag-llm-meter` 從 PyPI 裝得到 |
 
@@ -49,6 +49,7 @@
 | Device discovery | `/dev/cu.usbmodem*` + `AT` ping 驗證；多支時報錯讓使用者指定 | — |
 | 字型 | 自帶 Noto Sans CJK subset 在 `busytag_meter/assets/fonts/` | 不依賴 STHeiti（macOS 系統字型不可攜） |
 | 安裝方式 | `pipx install` 為主、`curl\|bash` shim 為次 | Phase 0 Subagent 2 ecosystem 分析 |
+| 排程機制 | **cron**（`crontab` 寫入）取代 launchd plist | debug 直覺、Linux 相容、crash 不影響工作流（120s 重跑即可） |
 | 設定路徑 | `~/.config/busytag-llm-meter/config.toml`（XDG） | 對齊 busytag_tool |
 | Branch | `main` | 已 rename |
 

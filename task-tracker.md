@@ -25,7 +25,7 @@
 ### Phase 2 — Installer / Hooks / Doctor
 （Phase 1 收尾後寫 `docs/phase-2-spec.md`）
 
-- [ ] `installer/plist.py` 產 + load launchd plist
+- [ ] `installer/cron.py` — 寫入 / 移除 crontab entry（`crontab -l` 讀、append、`crontab -` 寫回）
 - [ ] `hooks/settings_merger.py` 安全 merge `~/.claude/settings.json`
 - [ ] `installer/doctor.py` 自我診斷 CLI
 - [ ] `install.sh` shim（curl|bash 入口）
