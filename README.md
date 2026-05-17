@@ -97,10 +97,6 @@ busytag-meter install       # registers cron job + Claude Code hook
 | `device/` serial driver | ✅ AT+UF / AT+SP / AT+SC with force-reload pivot |
 | `display/renderer.py` | ✅ Pillow 240×280 PNG, dual provider layout |
 | `display/refresh.py` | ✅ hash-diff → skip upload if unchanged |
-| `hooks/` | 🔴 stub |
-| `installer/` | 🔴 stub — cron + settings.json merge not yet implemented |
-| `busytag-meter install` | 🔴 not yet implemented |
-| PyPI release | 🔴 pending |
 
 ---
 

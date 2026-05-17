@@ -97,10 +97,6 @@ busytag-meter install       # 自動設定 cron 排程 + Claude Code hook
 | `device/` 序列埠驅動 | ✅ AT+UF / AT+SP / AT+SC，含 force-reload pivot |
 | `display/renderer.py` | ✅ Pillow 240×280 PNG，雙 provider 版面 |
 | `display/refresh.py` | ✅ hash 比對，內容未變則跳過上傳 |
-| `hooks/` | 🔴 尚未實作 |
-| `installer/` | 🔴 尚未實作（cron + settings.json 合併） |
-| `busytag-meter install` | 🔴 尚未實作 |
-| PyPI 發布 | 🔴 待處理 |
 
 ---
 
